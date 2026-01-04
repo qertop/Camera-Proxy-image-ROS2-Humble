@@ -28,8 +28,6 @@ Pakiet `proxy` implementuje węzeł pośredniczący w przesyłaniu obrazu. Dla k
 ├── camera_proxy_workspace/         # Folder Twojego workspace'u
 │   └── src/
 │       └── proxy/                  # Główny pakiet ROS 2
-│           ├── msg/
-│           │   └── ResizedImage.msg
 │           ├── src/
 │           │   └── camera_proxy.cpp
 │           ├── CMakeLists.txt
