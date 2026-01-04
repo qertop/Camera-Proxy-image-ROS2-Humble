@@ -1,0 +1,9 @@
+# Ignoruj artefakty budowania ROS 2 wewnątrz workspace'u
+camera_proxy_workspace/build/
+camera_proxy_workspace/install/
+camera_proxy_workspace/log/
+
+# Pliki systemowe i tymczasowe
+.DS_Store
+Thumbs.db
+*.swp
