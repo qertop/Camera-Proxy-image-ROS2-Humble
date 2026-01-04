@@ -1,6 +1,6 @@
 # Camera Proxy ROS 2 Workspace
 
-Kompletny obszar roboczy (workspace) ROS 2 Humble zawierający pakiet `proxy`. Projekt służy do przetwarzania strumienia wideo z wykorzystaniem biblioteki OpenCV oraz mechanizmu `image_transport`.
+Kompletny obszar roboczy (workspace) ROS 2 Humble zawierający pakiet `proxy`. Projekt służy do przetwarzania strumienia wideo z wykorzystaniem biblioteki OpenCV, aby zwizualizować dane przesyłane przez kamere OAK-D.
 
 ## Wymagania i Zależności
 
@@ -14,10 +14,9 @@ Projekt wymaga zainstalowania poniższych bibliotek:
 * `rclcpp` — standardowa biblioteka C++ dla ROS 2.
 * `sensor_msgs` — obsługa wiadomości z czujników i obrazów.
 * `cv_bridge` — konwersja między formatami ROS a OpenCV.
-* `image_transport` — optymalizacja przesyłu obrazów.
 * `opencv` — biblioteka do przetwarzania obrazu.
 
-###Optymalizacja DDS
+### Optymalizacja DDS
 Aby urządzenie nie zalewało sieci niepotrzebnymi pakietami wymagane jest przeprowadzenie kroków z pliku README_DDS.txt
 
 ## Przegląd
@@ -25,13 +24,20 @@ Pakiet `proxy` implementuje węzeł pośredniczący w przesyłaniu obrazu. Dla k
 
 ## Struktura Workspace
 ```text
-camera_proxy_workspace/
-├── src/
-│   └── proxy/                # Pakiet ROS 2
-│       ├── src/              # Kod źródłowy (camera_proxy.cpp)
-│       ├── CMakeLists.txt    # Konfiguracja kompilacji
-│       └── package.xml       # Zależności pakietu
-├── .gitignore                # Wykluczenia dla Git (build, install, log)
-└── README.md                 # Ta dokumentacja
-
+.
+├── camera_proxy_workspace/         # Folder Twojego workspace'u
+│   └── src/
+│       └── proxy/                  # Główny pakiet ROS 2
+│           ├── msg/
+│           │   └── ResizedImage.msg
+│           ├── src/
+│           │   └── camera_proxy.cpp
+│           ├── CMakeLists.txt
+│           ├── LICENSE
+│           └── package.xml
+├── .gitignore                      # Plik ignorujący śmieci (build, install, log)
+├── fastdds_config.xml              # Konfiguracja FastDDS
+├── Notatka_deweloperska.pdf        # Dokumentacja projektu
+├── README_DDS.txt                  # Instrukcja do konfiguracji DDS
+└── README.md                       # Główny opis projektu (z tabelą wymagań)
 
